@@ -1,0 +1,333 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>旅行計画 - Create</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  <style>
+
+  [draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+  }
+  .column {
+    width: 300px;
+    height: 142px;
+    background-color: #fff;
+    -webkit-box-shadow: inset 0 0 3px #000;
+    -ms-box-shadow: inset 0 0 3px #000;
+    box-shadow: inset 0 0 3px #000;
+    text-align: center;
+    margin: auto;
+  }
+  .column.over {
+    border: 2px dashed #000;
+  }
+  .scr {
+    overflow-y: auto;  /* スクロール表示 */
+    width: 320px;
+    height: 500px;
+    float: left;
+  }
+
+  #columns{
+    float:left;
+    width: 80%;
+    height: 40%;
+    display:block;
+    padding: 10px;
+    clear:both;
+  }
+
+
+  .inner{
+    padding-bottom: 2px;
+    border-bottom: 2px solid #D8D8D8;
+    margin-bottom: 20px;
+  }
+
+  .keyword{
+    border-top: 2px solid #D8D8D8;
+  }
+
+  h5{
+    border-left: 5px solid #000;
+    margin: 0 0 3px;
+    padding-left: 7px;
+  }
+
+  .desc_input{
+    display: inline-block;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #999;
+    font-size: 100%;
+    font-weight: normal;
+    padding: 4px;
+    margin-bottom: 10px;
+    line-height: 18px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .15);
+    border-radius: 3px;
+  }
+  .tag{
+    height: 40px;
+  }
+  .desc,.title{
+    height:100px;
+  }
+  </style>
+
+</head>
+
+<body>
+  <div id="header">
+  <p>
+    <!-- <a href="#"><img src="" width="150px" height="50px" style="margin-left:30px"></a> -->
+  </p>
+  <div align="right" class="inner">
+    <a href="#">&nbsp;　ID　&nbsp;</a>
+    <a href="#"style="margin-right:150px">ログアウト</a>
+  </div>
+</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4" >
+        <div class="scr">
+          <div id="columns">
+            <div class="column" draggable="true"><a href="#"><br>大阪城</a><br><br>安土桃山時代に摂津国東成郡生玉荘大坂に築かれ、江戸時代に修築された日本の城。現在の大阪府大阪市中央区大阪城に所在する。</div>
+            <div class="column" draggable="true"><a href="#"><br>通天閣</a><br><br>通天閣（つうてんかく）は、大阪府大阪市浪速区の新世界中心部に建つ展望塔である。2007年5月15日に、国の登録有形文化財となった。公式キャラクターは「ビリケン」。...</div>
+            <div class="column" draggable="true"><a href="#"><br>道頓堀</a><br><br>道頓堀（どうとんぼり）は、大阪府大阪市中央区の繁華街および町名。または、同所の北を流れる道頓堀川の略称。
+              一部で「とんぼり」と略称される事もあるが定着しておらず...</div>
+            <div class="column" draggable="true"><a href="#"><br>梅田スカイビル</a><br><br>梅田スカイビル（うめだスカイビル）は、1993年3月に完成した、大阪府大阪市北区大淀中の新梅田シティ内にある超高層ビルである。</div>
+            <div class="column" draggable="true"><a href="#"><br>四天王寺</a><br><br>四天王寺（してんのうじ）は、大阪市天王寺区四天王寺にある寺院。聖徳太子建立七大寺の一つとされている。山号は荒陵山（あらはかさん）、本尊は救世観音菩薩...</div>
+            <div class="column" draggable="true"><a href="#"><br>住吉大社</a><br><br>住吉大社（すみよしたいしゃ）は、大阪府大阪市住吉区住吉二丁目にある神社。式内社（名神大社）、摂津国一宮、二十二社（中七社）の一社。...</div>
+            <div class="column" draggable="true"><a href="#"><br>あべのハルカス</a><br><br>あべのハルカス（Abeno Harukas）は、大阪市阿倍野区に立地する超高層ビル。
+              2017年現在、日本で最も高いビルであり、日本初のスーパートール...</div>
+            <div class="column" draggable="true"><a href="#"><br>スパワールド</a><br><br>スパワールドは、大阪市浪速区にある温泉をテーマとした娯楽施設。キャッチフレーズは「美と健康の24時間快適空間」。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4" >
+        <div class="scr">
+          <div id="columns">
+            <div class="column" draggable="true" style="center">ここに向かってドラッグ&amp;ドロップしてね</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="scr">
+          <h5>旅行計画のタイトル</h5>
+          <textarea name="title" class="desc_input title" type="text" placeholder="タイトルを入力してください。"></textarea>
+          <h5>簡単な説明</h5>
+          <textarea name="desc" class="desc_input desc" type="text" placeholder="簡単な説明を入力してください。"></textarea>
+          <h5>旅行先選択</h5>
+
+          <div class="form-group">
+            <select multiple class="form-control" id="sel2">
+              <option value="北海道">北海道</option>
+              <option value="青森県">青森県</option>
+              <option value="岩手県">岩手県</option>
+              <option value="宮城県">宮城県</option>
+              <option value="秋田県">秋田県</option>
+              <option value="山形県">山形県</option>
+              <option value="福島県">福島県</option>
+              <option value="茨城県">茨城県</option>
+              <option value="栃木県">栃木県</option>
+              <option value="群馬県">群馬県</option>
+              <option value="埼玉県">埼玉県</option>
+              <option value="千葉県">千葉県</option>
+              <option value="東京都">東京都</option>
+              <option value="神奈川県">神奈川県</option>
+              <option value="新潟県">新潟県</option>
+              <option value="富山県">富山県</option>
+              <option value="石川県">石川県</option>
+              <option value="福井県">福井県</option>
+              <option value="山梨県">山梨県</option>
+              <option value="長野県">長野県</option>
+              <option value="岐阜県">岐阜県</option>
+              <option value="静岡県">静岡県</option>
+              <option value="愛知県">愛知県</option>
+              <option value="三重県">三重県</option>
+              <option value="滋賀県">滋賀県</option>
+              <option value="京都府">京都府</option>
+              <option value="大阪府">大阪府</option>
+              <option value="兵庫県">兵庫県</option>
+              <option value="奈良県">奈良県</option>
+              <option value="和歌山県">和歌山県</option>
+              <option value="鳥取県">鳥取県</option>
+              <option value="島根県">島根県</option>
+              <option value="岡山県">岡山県</option>
+              <option value="広島県">広島県</option>
+              <option value="山口県">山口県</option>
+              <option value="徳島県">徳島県</option>
+              <option value="香川県">香川県</option>
+              <option value="愛媛県">愛媛県</option>
+              <option value="高知県">高知県</option>
+              <option value="福岡県">福岡県</option>
+              <option value="佐賀県">佐賀県</option>
+              <option value="長崎県">長崎県</option>
+              <option value="熊本県">熊本県</option>
+              <option value="大分県">大分県</option>
+              <option value="宮崎県">宮崎県</option>
+              <option value="鹿児島県">鹿児島県</option>
+              <option value="沖縄県">沖縄県</option>
+            </select>
+          </div>
+
+
+          <h5>設定したいタグ</h5>
+          <input name="tag" class="desc_input tag" type="text" placeholder="タグを入力してください。" value="">
+          <div class="form-group">
+            <input type="submit" value="投稿する" class="btn btn-primary">
+          </div>
+          </div>
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <br>
+
+  <div class="container keyword" style="padding:10px 0">
+    <form class="form-inline">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="キーワード入力">
+      </div>
+
+
+  <div class="form-group">
+    <input type="submit" value="検索" class="btn btn-primary">
+  </div>
+</form>
+
+</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</body>
+
+
+<script type="text/javascript">
+
+var dragSrcEl = null;
+
+function handleDragStart(e) {
+
+  dragSrcEl = this;
+
+  e.dataTransfer.effectAllowed = 'move';
+
+  e.dataTransfer.setData('text/html', this.outerHTML);
+  this.style.opacity = '0.4';
+}
+
+
+function handleDragOver(e) {
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
+  e.dataTransfer.dropEffect = 'move';
+  return false;
+}
+
+function liHandleDrop(e) {
+    this.classList.remove('over');
+  if (e.stopPropagation) {
+    e.stopPropagation();
+  }
+
+  if (dragSrcEl != this) {
+    dragSrcEl.outerHTML = "";
+    this.outerHTML = e.dataTransfer.getData('text/html') + this.outerHTML;
+    ResetEvent();
+  }
+
+  return false;
+}
+
+function ulHandleDrop(e){
+    this.classList.remove('over');
+  if (e.stopPropagation) {
+    e.stopPropagation();
+  }
+
+  if (dragSrcEl != this) {
+
+    dragSrcEl.outerHTML = "";
+    this.innerHTML = this.innerHTML + e.dataTransfer.getData('text/html');
+    ResetEvent();
+  }
+
+  return false;
+}
+
+function handleDragEnter(e) {
+  this.classList.add('over');
+}
+
+
+function handleDragEnd(e) {
+
+  this.style.opacity = '1.0';
+}
+
+
+function handleDragLeave(e) {
+  this.classList.remove('over');
+}
+
+function ResetEvent(){
+var cols = document.querySelectorAll('.column');
+
+cols.forEach(function(col) {
+  col.removeEventListener('dragstart', handleDragStart, false);
+  col.removeEventListener('dragenter', handleDragEnter, false);
+  col.removeEventListener('dragover', handleDragOver, false);
+  col.removeEventListener('dragleave', handleDragLeave, false);
+  col.removeEventListener('drop', liHandleDrop, false);
+  col.removeEventListener('dragend', handleDragEnd, false);
+
+});
+
+cols.forEach(function(col) {
+  col.addEventListener('dragstart', handleDragStart, false);
+  col.addEventListener('dragenter', handleDragEnter, false);
+  col.addEventListener('dragover', handleDragOver, false);
+  col.addEventListener('dragleave', handleDragLeave, false);
+  col.addEventListener('drop', liHandleDrop, false);
+  col.addEventListener('dragend', handleDragEnd, false);
+
+});
+
+cols = document.querySelectorAll('#columns');
+
+cols.forEach(function(col) {
+  col.removeEventListener('dragover', handleDragOver, false);
+  col.removeEventListener('drop', ulHandleDrop, false);
+
+});
+
+cols.forEach(function(col) {
+  col.addEventListener('dragover', handleDragOver, false);
+  col.addEventListener('drop', ulHandleDrop, false);
+});
+}
+ResetEvent();
+</script>
+</html>
