@@ -1,15 +1,13 @@
 # TravelPlanProject
 旅行計画ブラウザアプリ
 
-使用バージョン
-
-
 ## What is this?
 Make travel plan application using Django Rest Framework and Angular 4
 
 Authentication function is currently under development.
 
 ## Operating environment
+- macOS Sierra 10.12.6
 - python 3.6.1
 - Django 1.11.4
 - django-cors-headers 2.1.0
