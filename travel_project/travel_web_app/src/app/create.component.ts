@@ -177,7 +177,7 @@ export class CreateComponent {
       // htmlのclassを辿りspotのidを取得する
       let html_string = e["target"]["innerHTML"];
       let p = /<h4.*class="title_text" id="\d+">/gi;
-      let p2 = /id="(\d)"/i;
+      let p2 = /id="(\d+)"/i;
       let results = html_string.match(p);
       for(let i = 0; i < results.length; i++){
         let result = results[i].match(p2);
