@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/" routerLinkActive="current" [routerLinkActiveOptions]="{exact: True}">トラベルプラン</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/create" routerLinkActive="current">計画を作る</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/route-plans" routerLinkActive="current">みんなの計画</a>
+      </li>
+      <li class="nav-item" *ngIf="user_id">
+        <a class="nav-link" routerLink="/mypage" routerLinkActive="current">マイページ</a>
+      </li>
+      <li class="nav-item" *ngIf="!user_id">
+        <a class="nav-link" routerLink="/login" routerLinkActive="current">ログイン</a>
+      </li>
+      <li class="nav-item" *ngIf="user_id">
+        <a class="nav-link" routerLink="/" routerLinkActive="current" (click)="logout()">ログアウト</a>
+      </li>
+      <li class="nav-item" *ngIf="user_id">
+        <p class="nav-link my-2 my-lg-0">ようこそ{{user_id}}さん</p>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

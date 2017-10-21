@@ -1,0 +1,27 @@
+<br>
+<div>
+  <h1>{{ routeplan.name }}</h1>
+  <p>説明：{{ routeplan.desc }}</p>
+  <p>プランを引き継いで新しいプランを作る：<a href="./create?route_plan_id={{routeplan.id}}">継承</a></p>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">順番</th>
+      <th scope="col"> スポット名</th>
+      <th scope="col">都道府県</th>
+      <th scope="col">説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let tourismspot of tourismspots; index as i;">
+      <tr>
+        <td>{{ i+1 }}</td>
+        <td><a href="/spot/{{tourismspot.id}}">{{ tourismspot.name }}</a></td>
+        <td>{{ tourismspot.prefecture }}</td>
+        <td>{{ tourismspot.desc }}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

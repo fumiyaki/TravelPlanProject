@@ -1,0 +1,33 @@
+<br>
+<div>
+  <h1>マイページ</h1>
+  <p>ユーザーID: {{ user.user_id }}</p>
+  <p>ユーザー名: {{ user.name }}</p>
+  <p>性別: {{ user.gender }}</p>
+  <p>住所: {{ user.address }}</p>
+</div>
+
+<br>
+<h5>あなたのルートプラン</h5>
+<table class="table table-striped">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">プラン名</th>
+        <th scope="col">プラン 説明</th>
+        <th scope="col">作成者</th>
+        <th scope="col">継承</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let routeplan of routeplans">
+        <tr>
+          <td><a href="/route-plan/{{routeplan.id}}">{{ routeplan.name }}</a></td>
+          <td>{{ routeplan.desc }}</td>
+          <td><a href="/user/{{routeplan.user}}">{{ routeplan.user }}</a></td>
+          <td><a href="/create?route_plan_id={{routeplan.id}}">引き継ぐ</a></td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</table>
