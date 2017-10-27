@@ -36,7 +36,7 @@ export class CreateComponent {
         params: { route_plan: this.route_plan_id },
       }).subscribe(
         response => {
-          console.log("route_plan_spots",response.text())
+          // console.log("route_plan_spots",response.text())
           route_plan_spots = response.json();
         },
         error => {
@@ -58,9 +58,22 @@ export class CreateComponent {
           );
         }
       },100)
+
       setTimeout(()=>{
-        console.log(this.tss)
-      },1500)
+        let routeplanspot_order_num: any = []
+        for(let i = 0; i < route_plan_spots.length; i++){
+          for(let spot of this.tss){
+            if(route_plan_spots[i]['spot'] == spot['id']){
+              routeplanspot_order_num.push(spot)
+              break
+            }
+          }
+        }
+        this.tss = routeplanspot_order_num
+      },300)
+      // setTimeout(()=>{
+      //   console.log(this.tss)
+      // },1500)
     }
 
     // 以下ドラッグ＆ドロップを実現するためのコード
@@ -78,14 +91,33 @@ export class CreateComponent {
       e.dataTransfer.dropEffect = 'move';
       return false;
     }
+    //dropされたところがdragされたところより高い場合true
+    function checkBetterHeight(x:any,y:any){
+      let int_x: number = parseInt(x.id)
+      let int_y: number = parseInt(y.id)
+      if(int_x>int_y){
+        return true;
+      }
+       return false;
+    }
     function liHandleDrop(e: any) {
       this.classList.remove('over');
       if (e.stopPropagation) {
         e.stopPropagation();
       }
       if (dragSrcEl != this) {
+        if(dragSrcEl.parentNode == this.parentNode){
+          if(checkBetterHeight(this,dragSrcEl)){
+            this.outerHTML = this.outerHTML + e.dataTransfer.getData('text/html') ;
+          }else{
+            this.outerHTML =  e.dataTransfer.getData('text/html') + this.outerHTML;
+          }
+        }else{
+          this.outerHTML = this.outerHTML + e.dataTransfer.getData('text/html');
+
+        }
         dragSrcEl.outerHTML = "";
-        this.outerHTML = e.dataTransfer.getData('text/html') + this.outerHTML;
+
         ResetEvent();
       }
       return false;
@@ -114,6 +146,7 @@ export class CreateComponent {
     function ResetEvent() {
       let cols: any = document.querySelectorAll('.column');
       cols.forEach(function(col: any) {
+        col.id="";
         col.removeEventListener('dragstart', handleDragStart, false);
         col.removeEventListener('dragenter', handleDragEnter, false);
         col.removeEventListener('dragover', handleDragOver, false);
@@ -121,7 +154,10 @@ export class CreateComponent {
         col.removeEventListener('drop', liHandleDrop, false);
         col.removeEventListener('dragend', handleDragEnd, false);
       });
+      let i=1;
       cols.forEach(function(col: any) {
+        col.id=i;
+        i++
         col.addEventListener('dragstart', handleDragStart, false);
         col.addEventListener('dragenter', handleDragEnter, false);
         col.addEventListener('dragover', handleDragOver, false);
@@ -139,7 +175,8 @@ export class CreateComponent {
         col.addEventListener('drop', ulHandleDrop, false);
       });
     }
-    setInterval(ResetEvent, 500);
+
+    setInterval(ResetEvent, 500)
 
   }
 
@@ -164,7 +201,7 @@ export class CreateComponent {
       let result = response.json()
       this.route_plan_id = result["id"]
       let result2 = response.text()
-      console.log(result2)
+      // console.log(result2)
     },
     error => {
       console.log(`通信失敗：${error}`);
@@ -175,8 +212,8 @@ export class CreateComponent {
 
     setTimeout(()=>{
       // htmlのclassを辿りspotのidを取得する
-      let html_string = e["target"]["innerHTML"];
-      let p = /<h4.*class="title_text" id="\d+">/gi;
+      let html_string: any = document.querySelector('.create_plan').innerHTML;
+      let p = /<h4.*class="title_text" id="\d+.*">/gi;
       let p2 = /id="(\d)"/i;
       let results = html_string.match(p);
       for(let i = 0; i < results.length; i++){
@@ -189,7 +226,7 @@ export class CreateComponent {
           }
         )
       }
-      console.log(route_plan_spot);
+      // console.log(route_plan_spot);
     }, 700)
 
     setTimeout(()=>{
@@ -197,7 +234,7 @@ export class CreateComponent {
       .subscribe(
       response => {
         let result = response.text()
-        console.log(result)
+        // console.log(result)
         location.href = `./route-plan/${this.route_plan_id}`;
       },
       error => {

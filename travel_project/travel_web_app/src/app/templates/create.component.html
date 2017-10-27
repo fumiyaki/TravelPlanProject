@@ -4,9 +4,9 @@
     <div class="row">
 
       <div class="col-sm-4">
-        <div class="scr columns">
+        <div class="scr columns search_plan">
           <ng-container *ngFor="let ts of s_tss">
-            <div class="column search_plan" draggable="true">
+            <div class="column" draggable="true">
               <h4 [id]="ts.id" class="title_text">{{ ts.name }}<span class="prefecture">-{{ ts.prefecture }}</span></h4>
               <p>{{ ts.desc }}</p>
             </div>
@@ -15,9 +15,9 @@
       </div>
 
       <div class="col-sm-4">
-        <div class="scr columns">
+        <div class="scr columns create_plan">
           <ng-container *ngFor="let ts2 of tss">
-            <div class="column create_plan" draggable="true">
+            <div class="column" draggable="true">
               <h4 [id]="ts2.id" class="title_text">{{ ts2.name }}<span class="prefecture">-{{ ts2.prefecture }}</span></h4>
               <p>{{ ts2.desc }}</p>
             </div>

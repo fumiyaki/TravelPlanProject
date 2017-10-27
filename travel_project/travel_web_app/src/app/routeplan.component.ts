@@ -55,7 +55,20 @@ export class RoutePlanComponent {
           }
         );
       }
-    },700)
+    },500)
 
+    setTimeout(()=>{
+      let routeplanspot_order_num: any = []
+      for(let i = 0; i < this.routeplanspots.length; i++){
+        for(let spot of this.tourismspots){
+          if(this.routeplanspots[i]['spot'] == spot['id']){
+            routeplanspot_order_num.push(spot)
+            break
+          }
+        }
+      }
+      this.tourismspots = routeplanspot_order_num
+      console.log(routeplanspot_order_num)
+    },800)
   }
 }
