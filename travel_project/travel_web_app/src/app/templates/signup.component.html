@@ -56,9 +56,9 @@
 
   <div>
     <!--サブミット済みかどうかを判定-->
-    <input type="submit" value="送信" [disabled]="myForm.invalid || myForm.submitted" />
+    <input type="submit" class="btn btn-primary" value="送信" [disabled]="myForm.invalid || myForm.submitted" />
 
     <!--pristine／dirtyプロパティを利用したリセットボタン-->
-    <input type="reset" value="リセット" [disabled]="myForm.pristine" />
+    <input type="reset" class="btn btn-secondary" value="リセット" [disabled]="myForm.pristine" />
   </div>
 </form>
