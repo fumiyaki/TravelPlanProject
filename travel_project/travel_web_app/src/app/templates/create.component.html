@@ -8,7 +8,7 @@
           <ng-container *ngFor="let ts of s_tss">
             <div class="column" draggable="true">
               <h4 [id]="ts.id" class="title_text">{{ ts.name }}<span class="prefecture">-{{ ts.prefecture }}</span></h4>
-              <p>{{ ts.desc | slice: 0:67 }}</p>
+              <p>{{ ts.desc | truncate: 67 }}</p>
             </div>
           </ng-container>
         </div>
@@ -19,7 +19,7 @@
           <ng-container *ngFor="let ts2 of tss">
             <div class="column" draggable="true">
               <h4 [id]="ts2.id" class="title_text">{{ ts2.name }}<span class="prefecture">-{{ ts2.prefecture }}</span></h4>
-              <p>{{ ts2.desc | slice: 0:67 }}</p>
+              <p>{{ ts2.desc | truncate: 67 }}</p>
             </div>
           </ng-container>
         </div>
