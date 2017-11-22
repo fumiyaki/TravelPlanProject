@@ -17,10 +17,12 @@ import { SignupComponent } from './signup.component';
 import { UserComponent } from './user.component';
 import { SpotComponent } from './spot.component';
 
+import { TruncatePipe } from './truncate.pipe'
+
 @NgModule({
   imports:      [ BrowserModule, MY_ROUTES, FormsModule, HttpModule ],
   declarations: [ AppComponent, MainComponent,
-    CreateComponent, ErrorComponent, RoutePlanComponent, RoutePlansComponent, MypageComponent, LoginComponent, SignupComponent, UserComponent, SpotComponent ],
+    CreateComponent, ErrorComponent, RoutePlanComponent, RoutePlansComponent, MypageComponent, LoginComponent, SignupComponent, UserComponent, SpotComponent, TruncatePipe ],
   bootstrap:    [ AppComponent ],
   //XSRF対策
   providers:    [

@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'truncate'
 })
 export class TruncatePipe implements PipeTransform {
-  transform(value: string, length: number, omission: string = '...' ) {
+  transform(value: string, length: number = 67, omission: string = '...' ) {
     if ( typeof value !== 'string' ) {
       return value;
     }
