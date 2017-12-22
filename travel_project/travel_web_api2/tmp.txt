@@ -1,0 +1,104 @@
+Menu メニュー情報{
+  id String,
+  name String,
+  price int,
+  category,
+  sold_out Boolean,    //売り切れまたは品切れ
+  start_date Date,
+  end_date Date,
+  cost int,    //原価
+  option,
+},
+Category ジャンル{
+  name String,    //メニューのジャンル（サラダ、ドリンク）
+},
+Option オプション{
+  name String,
+  price int,
+  cost int,
+},
+User ユーザー{
+  name String,
+  user_id String,
+  password String,
+  birthday Date,
+  gender String,
+  authority String,    //権限（店長、アルバイト）
+  start_date Date,    //働き始めた日
+  end_date Date,    //働き終えた日
+  address String,    //住所
+},
+Order 注文{
+  seat int,    //客席番号
+  person_num int,    //来店人数
+  start_order_datetime Datetime,
+  end_order_datetime Datetime,
+  total_price int,
+  discount,    //値引き割引の金額
+  cancel_cost,    //cancelされた合計コスト
+  final_price,    //値引きやcancel後の金額
+},
+OrderDetail 注文詳細{
+  order,
+  menu,
+  user,
+  order_num int,
+  state String,    //(finish, cancel, making)
+  timing String,    // 配膳のタイミング（食前・中・後）
+},
+Tax 税金{
+  tax int,
+  start_date date,
+  end_date date,
+},
+
+
+
+データ注入
+users
+{
+    "user_id": "fumiya",
+    "password": "pass1009",
+    "name": "fumiya",
+    "mail": "fumiya@oic.jp",
+    "phone_num": "10203040506",
+    "birthday": "1995-10-09",
+    "gender": "man",
+    "authority": "admin",
+    "start_date": null,
+    "end_date": null,
+    "address": "大阪府",
+    "user_entry_date": null
+}
+
+Tourism Spot
+{
+    "name": "大阪城",
+    "desc": "",
+    "prefectures": "大阪府",
+    "address": "",
+    "phone_num": "",
+    "parkinglot": null,
+    "holiday": "",
+    "business_hours": "",
+    "charge": null,
+    "coordinate_latitude": null,
+    "coordinate_longitude": null,
+    "grade": 0
+}
+
+Route Plan
+{
+    "name": "大阪旅行",
+    "desc": "大阪へいく！！",
+    "user": "fumiya"
+}
+
+
+delete db command
+
+rm -f tmp.db db.sqlite3
+rm -r travelplan/migrations
+python manage.py makemigrations travelplan
+python manage.py migrate
+python manage.py runserver

@@ -3,7 +3,7 @@
   <form #myForm="ngForm" (ngSubmit)="post($event)">
     <div class="row">
 
-      <div class="col-sm-4">
+      <div class="col-sm-5">
         <div class="scr columns search_plan">
           <ng-container *ngFor="let ts of s_tss">
             <div class="column" draggable="true">
@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <div class="col-sm-4">
+      <div class="col-sm-5">
         <div class="scr columns create_plan">
           <ng-container *ngFor="let ts2 of tss">
             <div class="column" draggable="true">
@@ -25,15 +25,15 @@
         </div>
       </div>
 
-      <div class="col-sm-4">
-        <h5>旅行計画のタイトル</h5>
+      <div class="col-sm-2">
+        <h5 class="travel_plan_desc">旅行計画のタイトル</h5>
         <input type="text" name="name" [(ngModel)]="routeplan.name" class="form-control" type="text" placeholder="タイトルを入力してください。" required #name="ngModel">
-        <span *ngIf="name.errors?.required && name.dirty">
+        <span class="travel_plan_desc" *ngIf="name.errors?.required && name.dirty">
         タイトルは必須です</span>
-        <h5>簡単な説明</h5>
+        <h5 class="travel_plan_desc">簡単な説明</h5>
         <textarea name="desc" [(ngModel)]="routeplan.desc" class="desc_input desc" placeholder="簡単な説明を入力してください。" required #desc="ngModel"></textarea>
-        <span *ngIf="desc.errors?.required && desc.dirty">
-        軽く説明を入れてください</span>
+        <span class="travel_plan_desc" *ngIf="desc.errors?.required && desc.dirty">
+        計画の説明を入れてください</span>
         <div class="form-group">
           <input type="submit" value="計画を保存する" class="btn btn-primary" [disabled]="myForm.invalid || myForm.submitted">
         </div>
